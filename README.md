@@ -65,7 +65,7 @@ The current implementation works well in a single-threaded environment (the appl
 The object counter classes make use of a placeholder Lockable class, which in a real multi-threaded application will have to implement the synchronization methods.
 
 ## Logging ##
-The code uses the boost logging macro BOOST_LOG_TRIVIAL, however this can be easily replaced with any other logging class or macro.
+The code uses the boost.org logging macro BOOST_LOG_TRIVIAL, however this can be easily replaced with any other logging class or macro.
 
 ## Static instances ##
 The object counter utility classes rely on the fact that static variables are destructed when the process exits, which ensures the object counting works well with heap (allocated using new) and local variables. If however the instances being tracked are themselves static, the object counter utility may not work anymore, as C++ doesn’t guarantee the order in which static variables are allocated or destructed. It is therefore possible that the tracking static variable be destructed before the tracked instances, thus detecting false leaks.
