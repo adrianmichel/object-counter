@@ -1,5 +1,3 @@
-[TOC]
-
 # C++ Object Counter and Leak Detector #
 
 ## Introduction ##
@@ -17,8 +15,6 @@ Without object counter:
 
 
 ```
-#!C++
-
 class C {
                 // members
 };
@@ -29,8 +25,6 @@ With object counter:
 
 
 ```
-#!C++
-
 class C {
                 OBJ_COUNTER( C )
 
@@ -56,8 +50,6 @@ If an object with the same id between application run is leaked, a second object
 
 
 ```
-#!C++
-
 class C {
                 OBJ_COUNTER_BREAK_ON_INDEX( C , 5 )
                 // members
